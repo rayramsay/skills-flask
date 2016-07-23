@@ -1,12 +1,13 @@
-from flask import Flask, render_template
-from flask_debugtoolbar import DebugToolbarExtension
+from flask import Flask, render_template, request
+# from flask_debugtoolbar import DebugToolbarExtension
 
 
 app = Flask(__name__)
 
 
 # Required to use Flask sessions and the debug toolbar
-app.secret_key = "ABC"
+app.secret_key = "SECRETEATING"
+
 
 @app.route("/")
 def index_page():
@@ -20,13 +21,37 @@ def index_page():
     # return render_template("index.html")
 
 
+@app.route("/application-form")
+def application_form():
+    """Show application form."""
+
+    return render_template("application-form.html")
+
+
+@app.route("/application", methods=["POST"])
+def application_response():
+    """Show response to application form submission."""
+
+    firstname = request.form['firstname']
+    lastname = request.form['lastname']
+    salary = request.form['salary']
+    position = request.form['position']
+
+    return render_template("application-response.html",
+                           firstname=firstname,
+                           lastname=lastname,
+                           salary=salary,
+                           position=position)
+
 if __name__ == "__main__":
     # We have to set debug=True here, since it has to be True at the
     # point that we invoke the DebugToolbarExtension
     app.debug = True
 
     # Use the DebugToolbar
-    DebugToolbarExtension(app)
+    # DebugToolbarExtension(app)
 
     app.run(host="0.0.0.0")
 
+# begun 2:35
+# I made a silly mistake that slowed me down but hey, I successfully debugged it so that's cool.

@@ -6,8 +6,21 @@
 </head>
 <body>
 
-<!-- This page needs a form that can capture data about the user's
-first name, last name, job title, and salary requirements. -->
+    <h3>Job Application Form</h3>
+
+    <p>To apply for a job, please provide your:</p>
+
+    <form action="/application" method="post">
+        <label for="firstname">First name:</label> <input type="text" name="firstname" id="firstname"><br>
+        <label for="lastname">Last name:</label> <input type="text" name="lastname" id="lastname"><br>
+        <label for="salary">Salary requirement:</label> <input type="number" name="salary" id="salary"><br>
+        <label for="position">Job you are applying for:</label> <select name="position" id="position">
+            <option value="software engineer">Software Engineer</option>
+            <option value="QA engineer">QA Engineer</option>
+            <option value="product manager">Product Manager</option>
+        </select><br>
+        <input type="submit" value="Submit">
+    </form>
 
 </body>
 </html>
