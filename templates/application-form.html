@@ -1,10 +1,7 @@
-<!doctype html>
-<html>
-<head>
-    <title>Skills-Web</title>
-    <link rel="stylesheet" href="/static/styles.css">
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Job Application Form{% endblock %}
+
+{% block content %}
 
     <h3>Job Application Form</h3>
 
@@ -14,7 +11,7 @@
         <label for="firstname">First name:</label> <input type="text" name="firstname" id="firstname"><br>
         <label for="lastname">Last name:</label> <input type="text" name="lastname" id="lastname"><br>
         <label for="salary">Salary requirement:</label> <input type="number" name="salary" id="salary"><br>
-        <label for="position">Job you are applying for:</label> <select name="position" id="position">
+        <label for="position">Position you are applying for:</label> <select name="position" id="position">
             <option value="software engineer">Software Engineer</option>
             <option value="QA engineer">QA Engineer</option>
             <option value="product manager">Product Manager</option>
@@ -22,5 +19,4 @@
         <input type="submit" value="Submit">
     </form>
 
-</body>
-</html>
+{% endblock %}

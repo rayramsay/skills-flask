@@ -52,6 +52,3 @@ if __name__ == "__main__":
     # DebugToolbarExtension(app)
 
     app.run(host="0.0.0.0")
-
-# begun 2:35
-# I made a silly mistake that slowed me down but hey, I successfully debugged it so that's cool.
